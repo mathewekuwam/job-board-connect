@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <link rel="shortcut icon" href="Logo/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#a78bfa',
+                            DEFAULT: '#8b5cf6',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            dark: '#6d28d9',
+                        },
+                        secondary: {
+                            light: '#4ade80',
+                            DEFAULT: '#22c55e',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            dark: '#15803d',
+                        },
+                        accent: {
+                            light: '#fbbf24',
+                            DEFAULT: '#f59e0b',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            dark: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!--  Header with Navigation -->
+    <header class="bg-white shadow-sm animate-slide-up sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 relative flex items-center justify-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3CradialGradient id='grape'%3E%3Cstop offset='0%25' style='stop-color:%238b5cf6'/%3E%3Cstop offset='100%25' style='stop-color:%236d28d9'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg%3E%3Ccircle cx='100' cy='90' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='85' cy='105' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='115' cy='105' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='100' cy='120' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='70' cy='120' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='130' cy='120' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='85' cy='135' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='115' cy='135' r='12' fill='url(%23grape)'/%3E%3Ccircle cx='100' cy='150' r='12' fill='url(%23grape)'/%3E%3Cpath d='M100 70 Q95 50 85 45 L88 42 Q100 48 100 70' fill='%2322c55e'/%3E%3Cpath d='M100 70 Q105 50 115 45 L112 42 Q100 48 100 70' fill='%2322c55e'/%3E%3Cpath d='M85 45 Q80 42 75 45 Q70 50 72 58 L76 56 Q75 50 80 48 Q83 47 85 48 Z' fill='%2322c55e'/%3E%3Cpath d='M115 45 Q120 42 125 45 Q130 50 128 58 L124 56 Q125 50 120 48 Q117 47 115 48 Z' fill='%2322c55e'/%3E%3C/g%3E%3C/svg%3E" 
+                             alt="Jobnix Grape Logo" 
+                             class="w-full h-full object-contain">
+                    </div>
+                    <a href="index.html" class="flex items-center">
+                        <h1 class="text-3xl font-bold tracking-tight" style="font-family: 'Arial Black', sans-serif;">
+                            <span class="text-primary-600">Job</span><span class="text-secondary-600">nix</span>
+                        </h1>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Quick Links Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors">
+                            <span>Quick Links</span>
+                            <i class="fas fa-chevron-down text-xs mt-1 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                            <a href="index.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-home mr-2 text-primary-500"></i> Home
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-briefcase mr-2 text-primary-500"></i> Browse Jobs
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-building mr-2 text-primary-500"></i> Top Companies
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-book mr-2 text-primary-500"></i> Career Resources
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-envelope mr-2 text-primary-500"></i> Contact Us
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Regular Nav Links -->
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">For Job Seekers</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">For Employers</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">About Us</a>
+
+                    <!-- Search Bar -->
+                    <div class="relative ml-4">
+                        <input type="text" placeholder="Search jobs..."
+                            class="pl-10 pr-4 py-2 border rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-300">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-700 hover:text-primary-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4 px-4">
+            <div class="space-y-4">
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-home mr-2 text-primary-500"></i> Home
+                </a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-briefcase mr-2 text-primary-500"></i> Browse Jobs
+                </a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-building mr-2 text-primary-500"></i> Top Companies
+                </a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-book mr-2 text-primary-500"></i> Career Resources
+                </a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">
+                    <i class="fas fa-envelope mr-2 text-primary-500"></i> Contact Us
+                </a>
+                <div class="pt-4 border-t">
+                    <input type="text" placeholder="Search jobs..."
+                        class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <i class="fas fa-search absolute left-6 top-[182px] text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Form Section -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
+            <!-- Header with gradient -->
+            <div class="bg-gradient-to-r from-primary to-primary-dark py-6 px-6">
+                <h1 class="text-2xl font-bold text-white">Job Application Form</h1>
+                <p class="text-purple-100 opacity-90">Please fill out the form below to apply for the position</p>
+            </div>
+            
+            <!-- Progress Steps with gradient indicators -->
+            <div class="px-6 py-4 border-b bg-gradient-to-r from-gray-50 to-white">
+                <div class="flex justify-between items-center">
+                    <div class="step flex flex-col items-center" data-step="1">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-bold shadow-sm">1</div>
+                        <span class="text-sm mt-1 text-primary font-medium">Personal Info</span>
+                    </div>
+                    <div class="step flex flex-col items-center" data-step="2">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">2</div>
+                        <span class="text-sm mt-1 text-gray-500">Education</span>
+                    </div>
+                    <div class="step flex flex-col items-center" data-step="3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">3</div>
+                        <span class="text-sm mt-1 text-gray-500">Experience</span>
+                    </div>
+                    <div class="step flex flex-col items-center" data-step="4">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">4</div>
+                        <span class="text-sm mt-1 text-gray-500">Review</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Sections -->
+            <form id="jobApplicationForm" class="p-6 bg-white">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Personal Information</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+                            <input type="text" id="firstName" name="firstName" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter your first name</p>
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
+                            <input type="text" id="lastName" name="lastName" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter your last name</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address*</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                        <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter a valid email address</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                        <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter a valid phone number</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                        <textarea id="address" name="address" rows="2"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"></textarea>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <button type="button" class="next-step bg-gradient-to-r from-primary to-primary-dark text-white px-4 py-2 rounded-md hover:opacity-90 transition shadow-md">
+                            Next: Education <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Education -->
+                <div class="form-step hidden" data-step="2">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Education</h2>
+                    
+                    <div class="education-section mb-6">
+                        <div class="mb-4">
+                            <label for="institution" class="block text-sm font-medium text-gray-700 mb-1">Institution*</label>
+                            <input type="text" id="institution" name="education[0][institution]" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter institution name</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="degree" class="block text-sm font-medium text-gray-700 mb-1">Degree*</label>
+                                <input type="text" id="degree" name="education[0][degree]" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter your degree</p>
+                            </div>
+                            <div>
+                                <label for="fieldOfStudy" class="block text-sm font-medium text-gray-700 mb-1">Field of Study*</label>
+                                <input type="text" id="fieldOfStudy" name="education[0][fieldOfStudy]" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter field of study</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="startDate" class="block text-sm font-medium text-gray-700 mb-1">Start Date*</label>
+                                <input type="date" id="startDate" name="education[0][startDate]" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <p class="text-red-500 text-xs mt-1 error-message hidden">Please select start date</p>
+                            </div>
+                            <div>
+                                <label for="endDate" class="block text-sm font-medium text-gray-700 mb-1">End Date (or expected)*</label>
+                                <input type="date" id="endDate" name="education[0][endDate]" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <p class="text-red-500 text-xs mt-1 error-message hidden">Please select end date</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="addEducation" class="mb-6 text-accent-600 hover:text-accent-dark text-sm font-medium">
+                        <i class="fas fa-plus mr-1"></i> Add Another Education
+                    </button>
+                    
+                    <div class="flex justify-between">
+                        <button type="button" class="prev-step bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
+                            <i class="fas fa-arrow-left mr-2"></i> Back
+                        </button>
+                        <button type="button" class="next-step bg-gradient-to-r from-primary to-primary-dark text-white px-4 py-2 rounded-md hover:opacity-90 transition shadow-md">
+                            Next: Experience <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Work Experience -->
+                <div class="form-step hidden" data-step="3">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Work Experience</h2>
+                    
+                    <div class="experience-section mb-6">
+                        <div class="mb-4">
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company*</label>
+                            <input type="text" id="company" name="experience[0][company]" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter company name</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="position" class="block text-sm font-medium text-gray-700 mb-1">Position*</label>
+                            <input type="text" id="position" name="experience[0][position]" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            <p class="text-red-500 text-xs mt-1 error-message hidden">Please enter your position</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="jobStartDate" class="block text-sm font-medium text-gray-700 mb-1">Start Date*</label>
+                                <input type="date" id="jobStartDate" name="experience[0][startDate]" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <p class="text-red-500 text-xs mt-1 error-message hidden">Please select start date</p>
+                            </div>
+                            <div>
+                                <label for="jobEndDate" class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+                                <input type="date" id="jobEndDate" name="experience[0][endDate]"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <div class="flex items-center mt-1">
+                                    <input type="checkbox" id="currentlyWorking" name="experience[0][currentlyWorking]" class="mr-2">
+                                    <label for="currentlyWorking" class="text-sm text-gray-600">I currently work here</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="jobDescription" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                            <textarea id="jobDescription" name="experience[0][description]" rows="3"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="addExperience" class="mb-6 text-accent-600 hover:text-accent-dark text-sm font-medium">
+                        <i class="fas fa-plus mr-1"></i> Add Another Experience
+                    </button>
+                    
+                    <div class="flex justify-between">
+                        <button type="button" class="prev-step bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
+                            <i class="fas fa-arrow-left mr-2"></i> Back
+                        </button>
+                        <button type="button" class="next-step bg-gradient-to-r from-primary to-primary-dark text-white px-4 py-2 rounded-md hover:opacity-90 transition shadow-md">
+                            Next: Review <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Review and Submit -->
+                <div class="form-step hidden" data-step="4">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Review Your Application</h2>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-6 border border-gray-200">
+                        <h3 class="font-medium text-lg mb-2">Personal Information</h3>
+                        <div id="reviewPersonal" class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4"></div>
+                        
+                        <h3 class="font-medium text-lg mb-2 mt-4">Education</h3>
+                        <div id="reviewEducation"></div>
+                        
+                        <h3 class="font-medium text-lg mb-2 mt-4">Work Experience</h3>
+                        <div id="reviewExperience"></div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-2">
+                            <label for="agreeTerms" class="text-sm text-gray-700">
+                                I certify that all information provided in this application is true and complete. 
+                                I understand that any false or misleading information may result in rejection of 
+                                my application or termination of employment if hired.
+                            </label>
+                        </div>
+                        <p class="text-red-500 text-xs mt-1 error-message hidden">You must agree to the terms</p>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button type="button" class="prev-step bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
+                            <i class="fas fa-arrow-left mr-2"></i> Back
+                        </button>
+                        <button type="submit" class="bg-gradient-to-r from-secondary to-secondary-dark text-white px-6 py-2 rounded-md hover:opacity-90 transition shadow-md">
+                            Submit Application <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal with gradient and Back to Home button -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-2xl border border-gray-200">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-secondary-light to-secondary rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
+                    <i class="fas fa-check text-white text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">Application Submitted!</h3>
+                <p class="text-gray-500 mb-6">Thank you for your application. We will review your information and get back to you soon.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3">
+                    <button id="closeModal" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
+                        Close
+                    </button>
+                    <a href="index.html"><button id="backToHome" class="bg-gradient-to-r from-primary to-primary-dark text-white px-4 py-2 rounded-md hover:opacity-90 transition shadow-md">
+                        <i class="fas fa-home mr-2"></i> Back to Home
+                    </button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 flex items-center justify-center mr-4">
+                            <i class="fas fa-briefcase text-white text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold tracking-tight">Jobnix</h2>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        The premier platform connecting top talent with world-class employers.
+                        Trusted by over 10,000 companies and 500,000 professionals worldwide.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-600 transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 uppercase tracking-wider text-gray-300">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-accent-400 transition-colors duration-200 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-accent-500"></i> Home
+                            </a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-accent-400 transition-colors duration-200 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-accent-500"></i> Browse Jobs
+                            </a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-accent-400 transition-colors duration-200 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-accent-500"></i> Top Companies
+                            </a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-accent-400 transition-colors duration-200 flex items-center">
+                                <i class="fas fa-chevron-right text

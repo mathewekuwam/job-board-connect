@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register - Job Board Connect</title>
+
+    <link rel="icon" type="image/jpg" href="../assets/images/nip-favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+        }
+
+        .registration-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .registration-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .nav-pills-custom .nav-link {
+            border-radius: 0;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            color: #6b7280;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-pills-custom .nav-link.active {
+            background: transparent;
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .selection-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <div class="text-center mb-5" data-aos="fade-up">
+                        <a href="index.html" class="text-decoration-none">
+                            <h2 class="fw-bold text-primary mb-2">
+                                <i class="bi bi-briefcase-fill me-2"></i>Job Board Connect
+                            </h2>
+                        </a>
+                        <h1 class="h3 fw-bold">Create an Account</h1>
+                        <p class="text-muted">Join Kenya's fastest growing job network</p>
+                    </div>
+
+                    <div class="registration-card" data-aos="fade-up" data-aos-delay="100">
+
+                        <ul class="nav nav-pills nav-justified nav-pills-custom mb-4 border-bottom" id="registrationTab"
+                            role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="candidate-tab" data-bs-toggle="pill"
+                                    data-bs-target="#candidate" type="button" role="tab" aria-controls="candidate"
+                                    aria-selected="true">
+                                    <i class="bi bi-person me-2"></i>I'm a Job Seeker
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="employer-tab" data-bs-toggle="pill"
+                                    data-bs-target="#employer" type="button" role="tab" aria-controls="employer"
+                                    aria-selected="false">
+                                    <i class="bi bi-building me-2"></i>I'm an Employer
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content p-4 p-md-5" id="registrationTabContent">
+
+                            <!-- Candidate Registration -->
+                            <div class="tab-pane fade show active" id="candidate" role="tabpanel"
+                                aria-labelledby="candidate-tab">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">First Name *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="Enter first name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Last Name *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="Enter last name" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Email Address *</label>
+                                            <input type="email" class="form-control form-control-lg"
+                                                placeholder="your@email.com" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Password *</label>
+                                            <input type="password" class="form-control form-control-lg"
+                                                placeholder="Create a password" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Confirm Password *</label>
+                                            <input type="password" class="form-control form-control-lg"
+                                                placeholder="Repeat password" required>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="termsCheck"
+                                                    required>
+                                                <label class="form-check-label text-muted" for="termsCheck">
+                                                    I agree to the <a href="#"
+                                                        class="text-primary text-decoration-none">Terms and
+                                                        Conditions</a> and <a href="#"
+                                                        class="text-primary text-decoration-none">Privacy Policy</a>
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-lg w-100">Create Candidate
+                                                Account</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Employer Registration -->
+                            <div class="tab-pane fade" id="employer" role="tabpanel" aria-labelledby="employer-tab">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Company Name *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="Enter company name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Contact Person *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="Full Name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Work Email *</label>
+                                            <input type="email" class="form-control form-control-lg"
+                                                placeholder="careers@company.com" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Password *</label>
+                                            <input type="password" class="form-control form-control-lg"
+                                                placeholder="Create a password" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Confirm Password *</label>
+                                            <input type="password" class="form-control form-control-lg"
+                                                placeholder="Repeat password" required>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="termsCheckEmployer"
+                                                    required>
+                                                <label class="form-check-label text-muted" for="termsCheckEmployer">
+                                                    I agree to the <a href="#"
+                                                        class="text-primary text-decoration-none">Terms and
+                                                        Conditions</a> and <a href="#"
+                                                        class="text-primary text-decoration-none">Privacy Policy</a>
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-lg w-100">Create Employer
+                                                Account</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <div class="bg-light p-4 text-center border-top">
+                            <p class="mb-0">Already have an account? <a href="login.html"
+                                    class="text-primary fw-bold text-decoration-none">Sign In</a></p>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-4" data-aos="fade-up">
+                        <a href="index.html" class="text-muted text-decoration-none"><i
+                                class="bi bi-arrow-left me-1"></i>Back to Home</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendors/aos/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post a Job - Job Board Connect</title>
+
+    <link rel="icon" type="image/jpg" href="../assets/images/nip-favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html">
+                    <i class="bi bi-briefcase-fill me-2"></i>Job Board Connect
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jobs.html">Browse Jobs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="employers.html">For Employers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-3"><a class="btn btn-outline-primary" href="login.html">Sign In</a></li>
+                        <li class="nav-item ms-2"><a class="btn btn-primary" href="post-job.html">Post a Job</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Page Header -->
+            <section class="py-5 bg-light">
+                <div class="container text-center" data-aos="fade-up">
+                    <h1 class="fw-bold mb-3">Post a Job</h1>
+                    <p class="lead text-muted">Find the perfect candidate for your open position</p>
+                </div>
+            </section>
+
+            <!-- Post Job Form -->
+            <section class="py-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+
+                            <form>
+                                <!-- Job Information -->
+                                <div class="form-section mb-4" data-aos="fade-up">
+                                    <h4 class="fw-bold mb-4">Job Information</h4>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Job Title *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="e.g. Senior Software Engineer" required>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Job Category *</label>
+                                            <select class="form-select form-control-lg" required>
+                                                <option value="">Select Category</option>
+                                                <option>IT & Software</option>
+                                                <option>Marketing</option>
+                                                <option>Sales</option>
+                                                <option>Healthcare</option>
+                                                <option>Education</option>
+                                                <option>Finance</option>
+                                                <option>Engineering</option>
+                                                <option>Customer Service</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Job Type *</label>
+                                            <select class="form-select form-control-lg" required>
+                                                <option value="">Select Type</option>
+                                                <option>Full Time</option>
+                                                <option>Part Time</option>
+                                                <option>Contract</option>
+                                                <option>Internship</option>
+                                                <option>Freelance</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Experience Level *</label>
+                                            <select class="form-select form-control-lg" required>
+                                                <option value="">Select Level</option>
+                                                <option>Entry Level</option>
+                                                <option>Mid Level</option>
+                                                <option>Senior Level</option>
+                                                <option>Executive</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Education Required *</label>
+                                            <select class="form-select form-control-lg" required>
+                                                <option value="">Select Education</option>
+                                                <option>High School</option>
+                                                <option>Diploma</option>
+                                                <option>Bachelor's Degree</option>
+                                                <option>Master's Degree</option>
+                                                <option>PhD</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Minimum Salary (KSh)</label>
+                                            <input type="number" class="form-control form-control-lg"
+                                                placeholder="e.g. 100000">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Maximum Salary (KSh)</label>
+                                            <input type="number" class="form-control form-control-lg"
+                                                placeholder="e.g. 150000">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Job Description *</label>
+                                            <textarea class="form-control" rows="6"
+                                                placeholder="Describe the role, responsibilities, and what you're looking for..."
+                                                required></textarea>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Requirements *</label>
+                                            <textarea class="form-control" rows="5"
+                                                placeholder="List the key requirements for this position..."
+                                                required></textarea>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Skills (comma separated)</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="e.g. React, Node.js, AWS, Python">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Location Information -->
+                                <div class="form-section mb-4" data-aos="fade-up" data-aos-delay="100">
+                                    <h4 class="fw-bold mb-4">Location Information</h4>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">City *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="e.g. Nairobi" required>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Country *</label>
+                                            <input type="text" class="form-control form-control-lg" value="Kenya"
+                                                required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="remote">
+                                                <label class="form-check-label" for="remote">
+                                                    This is a remote position
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Company Information -->
+                                <div class="form-section mb-4" data-aos="fade-up" data-aos-delay="200">
+                                    <h4 class="fw-bold mb-4">Company Information</h4>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Company Name *</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                placeholder="Your Company Name" required>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Company Email *</label>
+                                            <input type="email" class="form-control form-control-lg"
+                                                placeholder="careers@company.com" required>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Company Website</label>
+                                            <input type="url" class="form-control form-control-lg"
+                                                placeholder="https://www.company.com">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">About Company</label>
+                                            <textarea class="form-control" rows="4"
+                                                placeholder="Brief description of your company..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Application Details -->
+                                <div class="form-section mb-4" data-aos="fade-up" data-aos-delay="300">
+                                    <h4 class="fw-bold mb-4">Application Details</h4>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Application Deadline</label>
+                                            <input type="date" class="form-control form-control-lg">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Number of Vacancies</label>
+                                            <input type="number" class="form-control form-control-lg" value="1" min="1">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-semibold">Application Email *</label>
+                                            <input type="email" class="form-control form-control-lg"
+                                                placeholder="Where candidates should send applications" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="bi bi-send me-2"></i>Post Job
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-secondary btn-lg px-5 ms-3">
+                                        <i class="bi bi-x-circle me-2"></i>Clear Form
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                        <!-- Sidebar Info -->
+                        <div class="col-lg-4">
+                            <div class="form-section" data-aos="fade-up">
+                                <h5 class="fw-bold mb-4">Why Post with Us?</h5>
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Large Candidate Pool</h6>
+                                            <p class="text-muted small mb-0">Access to 50,000+ active job seekers</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Quick & Easy</h6>
+                                            <p class="text-muted small mb-0">Post your job in just 5 minutes</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Affordable Pricing</h6>
+                                            <p class="text-muted small mb-0">Competitive rates for all budgets</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Expert Support</h6>
+                                            <p class="text-muted small mb-0">Dedicated customer service team</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-info">
+                                    <i class="bi bi-info-circle me-2"></i>
+                                    <strong>Need help?</strong> Contact our support team at <a
+                                        href="mailto:support@jobboard.co.ke">support@jobboard.co.ke</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2026 Job Board Connect. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendors/aos/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>

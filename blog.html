@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - Job Board Connect</title>
+
+    <link rel="icon" type="image/jpg" href="../assets/images/nip-favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+        }
+
+        .blog-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            height: 200px;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html">
+                    <i class="bi bi-briefcase-fill me-2"></i>Job Board Connect
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jobs.html">Browse Jobs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="employers.html">For Employers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-3"><a class="btn btn-outline-primary" href="login.html">Sign In</a></li>
+                        <li class="nav-item ms-2"><a class="btn btn-primary" href="post-job.html">Post a Job</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Page Header -->
+            <section class="py-5 bg-light">
+                <div class="container text-center" data-aos="fade-up">
+                    <h1 class="fw-bold mb-3">Career Resources & News</h1>
+                    <p class="lead text-muted">Latest tips, trends, and career advice for job seekers and employers</p>
+                </div>
+            </section>
+
+            <!-- Blog Grid -->
+            <section class="py-5">
+                <div class="container">
+
+                    <div class="row g-4">
+                        <!-- Article 1 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                            <div class="card blog-card">
+                                <div class="blog-img">
+                                    <i class="bi bi-image text-muted fs-1"></i>
+                                </div>
+                                <div class="card-body">
+                                    <span class="category-badge mb-3">Career Advice</span>
+                                    <h5 class="fw-bold mb-3"><a href="blog-post.html"
+                                            class="text-dark text-decoration-none">How to Write a Resume That Gets You
+                                            Noticed</a></h5>
+                                    <p class="text-muted small">Learn the key elements of a modern resume and how to
+                                        pass applicant tracking systems...</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 pb-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle p-2 me-2"><i
+                                                class="bi bi-person text-muted"></i></div>
+                                        <div class="small">
+                                            <div class="fw-bold">Admin</div>
+                                            <div class="text-muted">Jan 05, 2026</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 2 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card blog-card">
+                                <div class="blog-img">
+                                    <i class="bi bi-image text-muted fs-1"></i>
+                                </div>
+                                <div class="card-body">
+                                    <span class="category-badge mb-3">Hiring Trends</span>
+                                    <h5 class="fw-bold mb-3"><a href="blog-post.html"
+                                            class="text-dark text-decoration-none">The Rise of Remote Work in Kenya:
+                                            2026 Trends</a></h5>
+                                    <p class="text-muted small">Discover how companies are adapting to hybrid and remote
+                                        work models in the local market...</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 pb-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle p-2 me-2"><i
+                                                class="bi bi-person text-muted"></i></div>
+                                        <div class="small">
+                                            <div class="fw-bold">Admin</div>
+                                            <div class="text-muted">Jan 02, 2026</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 3 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card blog-card">
+                                <div class="blog-img">
+                                    <i class="bi bi-image text-muted fs-1"></i>
+                                </div>
+                                <div class="card-body">
+                                    <span class="category-badge mb-3">Interview Tips</span>
+                                    <h5 class="fw-bold mb-3"><a href="blog-post.html"
+                                            class="text-dark text-decoration-none">Mastering the Virtual Interview: A
+                                            Guide</a></h5>
+                                    <p class="text-muted small">Top tips for technical setup and communication during
+                                        Zoom or Google Meet interviews...</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 pb-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle p-2 me-2"><i
+                                                class="bi bi-person text-muted"></i></div>
+                                        <div class="small">
+                                            <div class="fw-bold">Admin</div>
+                                            <div class="text-muted">Dec 28, 2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 4 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                            <div class="card blog-card">
+                                <div class="blog-img">
+                                    <i class="bi bi-image text-muted fs-1"></i>
+                                </div>
+                                <div class="card-body">
+                                    <span class="category-badge mb-3">Employment Law</span>
+                                    <h5 class="fw-bold mb-3"><a href="blog-post.html"
+                                            class="text-dark text-decoration-none">Understanding Your Rights as a
+                                            Contract Worker</a></h5>
+                                    <p class="text-muted small">A legal overview of what you should know before signing
+                                        your next gig contract...</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 pb-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle p-2 me-2"><i
+                                                class="bi bi-person text-muted"></i></div>
+                                        <div class="small">
+                                            <div class="fw-bold">Admin</div>
+                                            <div class="text-muted">Dec 20, 2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 5 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card blog-card">
+                                <div class="blog-img">
+                                    <i class="bi bi-image text-muted fs-1"></i>
+                                </div>
+                                <div class="card-body">
+                                    <span class="category-badge mb-3">Skills</span>
+                                    <h5 class="fw-bold mb-3"><a href="blog-post.html"
+                                            class="text-dark text-decoration-none">Top 10 Soft Skills Employers are
+                                            Looking For</a></h5>
+                                    <p class="text-muted small">Why emotional intelligence and communication are
+                                        becoming more critical than technical skills...</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 pb-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle p-2 me-2"><i
+                                                class="bi bi-person text-muted"></i></div>
+                                        <div class="small">
+                                            <div class="fw-bold">Admin</div>
+                                            <div class="text-muted">Dec 15, 2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 6 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card blog-card">
+                                <div class="blog-img">
+                                    <i class="bi bi-image text-muted fs-1"></i>
+                                </div>
+                                <div class="card-body">
+                                    <span class="category-badge mb-3">Networking</span>
+                                    <h5 class="fw-bold mb-3"><a href="blog-post.html"
+                                            class="text-dark text-decoration-none">How to Use LinkedIn effectively for
+                                            Job Hunting</a></h5>
+                                    <p class="text-muted small">Strategies for optimizing your profile and connecting
+                                        with recruiters directly...</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 pb-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle p-2 me-2"><i
+                                                class="bi bi-person text-muted"></i></div>
+                                        <div class="small">
+                                            <div class="fw-bold">Admin</div>
+                                            <div class="text-muted">Dec 10, 2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-5" data-aos="fade-up">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2026 Job Board Connect. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendors/aos/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>

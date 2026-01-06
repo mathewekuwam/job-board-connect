@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browse Jobs - Job Board Connect</title>
+
+    <link rel="icon" type="image/jpg" href="../assets/images/nip-favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+        }
+
+        .filter-sidebar {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .job-list-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .job-list-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html">
+                    <i class="bi bi-briefcase-fill me-2"></i>Job Board Connect
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="jobs.html">Browse Jobs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="employers.html">For Employers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-3"><a class="btn btn-outline-primary" href="login.html">Sign In</a></li>
+                        <li class="nav-item ms-2"><a class="btn btn-primary" href="post-job.html">Post a Job</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Page Header -->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <h1 class="fw-bold mb-4" data-aos="fade-up">Browse Jobs</h1>
+                    <div class="row g-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Job Title or Keywords">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control form-control-lg" placeholder="Location">
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select form-control-lg">
+                                <option>All Categories</option>
+                                <option>IT & Software</option>
+                                <option>Marketing</option>
+                                <option>Sales</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary btn-lg w-100"><i class="bi bi-search"></i> Search</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Jobs Content -->
+            <section class="py-5">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Filters Sidebar -->
+                        <div class="col-lg-3 mb-4">
+                            <div class="filter-sidebar">
+                                <h5 class="fw-bold mb-4">Filters</h5>
+
+                                <!-- Job Type -->
+                                <div class="mb-4">
+                                    <h6 class="fw-semibold mb-3">Job Type</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="fullTime">
+                                        <label class="form-check-label" for="fullTime">Full Time (580)</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="partTime">
+                                        <label class="form-check-label" for="partTime">Part Time (142)</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="contract">
+                                        <label class="form-check-label" for="contract">Contract (98)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="intern">
+                                        <label class="form-check-label" for="intern">Internship (45)</label>
+                                    </div>
+                                </div>
+
+                                <!-- Experience Level -->
+                                <div class="mb-4">
+                                    <h6 class="fw-semibold mb-3">Experience Level</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="entry">
+                                        <label class="form-check-label" for="entry">Entry Level</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="mid">
+                                        <label class="form-check-label" for="mid">Mid Level</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="senior">
+                                        <label class="form-check-label" for="senior">Senior Level</label>
+                                    </div>
+                                </div>
+
+                                <!-- Salary Range -->
+                                <div class="mb-4">
+                                    <h6 class="fw-semibold mb-3">Salary Range</h6>
+                                    <select class="form-select">
+                                        <option>Any Salary</option>
+                                        <option>Below KSh 50K</option>
+                                        <option>KSh 50K - 100K</option>
+                                        <option>KSh 100K - 150K</option>
+                                        <option>KSh 150K - 200K</option>
+                                        <option>Above KSh 200K</option>
+                                    </select>
+                                </div>
+
+                                <!-- Posted Date -->
+                                <div>
+                                    <h6 class="fw-semibold mb-3">Posted</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="posted" id="anytime" checked>
+                                        <label class="form-check-label" for="anytime">Anytime</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="posted" id="last24">
+                                        <label class="form-check-label" for="last24">Last 24 hours</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="posted" id="last7">
+                                        <label class="form-check-label" for="last7">Last 7 days</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="posted" id="last30">
+                                        <label class="form-check-label" for="last30">Last 30 days</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jobs List -->
+                        <div class="col-lg-9">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p class="mb-0"><strong>2,487</strong> jobs found</p>
+                                <select class="form-select w-auto">
+                                    <option>Most Recent</option>
+                                    <option>Highest Salary</option>
+                                    <option>Most Relevant</option>
+                                </select>
+                            </div>
+
+                            <!-- Job Card 1 -->
+                            <div class="job-list-card" data-aos="fade-up">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="company-logo">
+                                            <i class="bi bi-building text-primary fs-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <div>
+                                                <h5 class="fw-bold mb-1">Senior Software Engineer</h5>
+                                                <p class="text-muted mb-2">TechCorp Kenya</p>
+                                            </div>
+                                            <span class="badge bg-success">Full Time</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 mb-3">
+                                            <span class="text-muted"><i class="bi bi-geo-alt me-1"></i>Nairobi,
+                                                Kenya</span>
+                                            <span class="text-muted"><i class="bi bi-calendar me-1"></i>Posted 2 days
+                                                ago</span>
+                                            <span class="text-primary fw-semibold"><i
+                                                    class="bi bi-currency-exchange me-1"></i>KSh 180K - 250K</span>
+                                        </div>
+                                        <p class="mb-3">We're seeking an experienced software engineer proficient in
+                                            React, Node.js, and cloud technologies...</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <span class="badge bg-light text-dark">React</span>
+                                                <span class="badge bg-light text-dark">Node.js</span>
+                                                <span class="badge bg-light text-dark">AWS</span>
+                                            </div>
+                                            <a href="job-details.html" class="btn btn-outline-primary">View Job</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job Card 2 -->
+                            <div class="job-list-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="company-logo">
+                                            <i class="bi bi-building text-success fs-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <div>
+                                                <h5 class="fw-bold mb-1">Marketing Manager</h5>
+                                                <p class="text-muted mb-2">BrandWorks Ltd</p>
+                                            </div>
+                                            <span class="badge bg-warning text-dark">Part Time</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 mb-3">
+                                            <span class="text-muted"><i class="bi bi-geo-alt me-1"></i>Mombasa,
+                                                Kenya</span>
+                                            <span class="text-muted"><i class="bi bi-calendar me-1"></i>Posted 1 week
+                                                ago</span>
+                                            <span class="text-primary fw-semibold"><i
+                                                    class="bi bi-currency-exchange me-1"></i>KSh 120K - 180K</span>
+                                        </div>
+                                        <p class="mb-3">Lead our marketing team to create compelling campaigns that
+                                            drive brand awareness and customer engagement...</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <span class="badge bg-light text-dark">Marketing</span>
+                                                <span class="badge bg-light text-dark">Digital</span>
+                                                <span class="badge bg-light text-dark">Strategy</span>
+                                            </div>
+                                            <a href="job-details.html" class="btn btn-outline-primary">View Job</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job Card 3 -->
+                            <div class="job-list-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="company-logo">
+                                            <i class="bi bi-building text-warning fs-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <div>
+                                                <h5 class="fw-bold mb-1">UI/UX Designer</h5>
+                                                <p class="text-muted mb-2">DesignHub Africa</p>
+                                            </div>
+                                            <span class="badge bg-success">Full Time</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 mb-3">
+                                            <span class="text-muted"><i class="bi bi-geo-alt me-1"></i>Nairobi,
+                                                Kenya</span>
+                                            <span class="text-muted"><i class="bi bi-calendar me-1"></i>Posted 3 days
+                                                ago</span>
+                                            <span class="text-primary fw-semibold"><i
+                                                    class="bi bi-currency-exchange me-1"></i>KSh 100K - 150K</span>
+                                        </div>
+                                        <p class="mb-3">Create beautiful, intuitive user interfaces and experiences for
+                                            web and mobile applications...</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <span class="badge bg-light text-dark">Figma</span>
+                                                <span class="badge bg-light text-dark">Adobe XD</span>
+                                                <span class="badge bg-light text-dark">Sketch</span>
+                                            </div>
+                                            <a href="job-details.html" class="btn btn-outline-primary">View Job</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job Card 4 -->
+                            <div class="job-list-card" data-aos="fade-up" data-aos-delay="300">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="company-logo">
+                                            <i class="bi bi-building text-info fs-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <div>
+                                                <h5 class="fw-bold mb-1">Sales Executive</h5>
+                                                <p class="text-muted mb-2">SalesForce Kenya</p>
+                                            </div>
+                                            <span class="badge bg-success">Full Time</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 mb-3">
+                                            <span class="text-muted"><i class="bi bi-geo-alt me-1"></i>Kisumu,
+                                                Kenya</span>
+                                            <span class="text-muted"><i class="bi bi-calendar me-1"></i>Posted 5 days
+                                                ago</span>
+                                            <span class="text-primary fw-semibold"><i
+                                                    class="bi bi-currency-exchange me-1"></i>KSh 80K - 120K +
+                                                Commission</span>
+                                        </div>
+                                        <p class="mb-3">Drive sales growth by building relationships with clients and
+                                            delivering exceptional customer service...</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex gap-2">
+                                                <span class="badge bg-light text-dark">Sales</span>
+                                                <span class="badge bg-light text-dark">B2B</span>
+                                                <span class="badge bg-light text-dark">CRM</span>
+                                            </div>
+                                            <a href="job-details.html" class="btn btn-outline-primary">View Job</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <nav class="mt-5" data-aos="fade-up">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <h5 class="fw-bold mb-4">Job Board Connect</h5>
+                        <p class="text-white-50">Kenya's leading job platform</p>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6 class="fw-bold mb-3">For Candidates</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><a href="jobs.html"
+                                            class="text-white-50 text-decoration-none">Browse Jobs</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="fw-bold mb-3">For Employers</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><a href="post-job.html"
+                                            class="text-white-50 text-decoration-none">Post a Job</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="fw-bold mb-3">Company</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><a href="about.html"
+                                            class="text-white-50 text-decoration-none">About</a></li>
+                                    <li class="mb-2"><a href="contact.html"
+                                            class="text-white-50 text-decoration-none">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4 border-secondary">
+                <div class="text-center text-white-50">
+                    <p class="mb-0">&copy; 2026 Job Board Connect. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendors/aos/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Board Connect - Find Your Dream Job</title>
+  
+  <meta name="description" content="Job Board Connect - Kenya's leading job platform connecting employers with talented professionals.">
+  <meta name="keywords" content="jobs, Kenya jobs, careers, employment, job search">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="../assets/images/nip-favicon.jpg">
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link href="../assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #10b981;
+      --dark-color: #1e293b;
+    }
+    
+    .hero__job {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+    
+    .job-search-box {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    .job-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .category-card {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .category-card:hover {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+      color: white;
+      transform: scale(1.05);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-wrap">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">
+          <i class="bi bi-briefcase-fill me-2"></i>Job Board Connect
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="jobs.html">Browse Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="employers.html">For Employers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="btn btn-outline-primary" href="login.html">Sign In</a>
+            </li>
+            <li class="nav-item ms-2">
+              <a class="btn btn-primary" href="post-job.html">Post a Job</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      
+      <!-- Hero Section -->
+      <section class="hero__job">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+              <h1 class="display-4 fw-bold mb-4">Find Your Dream Job Today</h1>
+              <p class="lead mb-4">Connect with top employers across Kenya. Thousands of jobs available in various industries.</p>
+              <div class="d-flex gap-3">
+                <a href="jobs.html" class="btn btn-light btn-lg">Browse Jobs</a>
+                <a href="post-job.html" class="btn btn-outline-light btn-lg">Post a Job</a>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+              <div class="job-search-box">
+                <h3 class="text-dark mb-4">Quick Job Search</h3>
+                <form>
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Job Title or Keywords">
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Location">
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-select form-control-lg">
+                      <option>All Categories</option>
+                      <option>IT & Software</option>
+                      <option>Marketing</option>
+                      <option>Sales</option>
+                      <option>Healthcare</option>
+                      <option>Education</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg w-100">
+                    <i class="bi bi-search me-2"></i>Search Jobs
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="stat-number">2,500+</div>
+              <p class="text-muted">Active Jobs</p>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="stat-number">850+</div>
+              <p class="text-muted">Companies</p>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-number">50K+</div>
+              <p class="text-muted">Candidates</p>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-number">15K+</div>
+              <p class="text-muted">Jobs Filled</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Jobs -->
+      <section class="py-5">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold mb-3">Featured Jobs</h2>
+            <p class="text-muted">Hand-picked opportunities from top companies</p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Job Card 1 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card job-card h-100 p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div class="bg-primary bg-opacity-10 rounded p-3">
+                    <i class="bi bi-laptop text-primary fs-2"></i>
+                  </div>
+                  <span class="badge bg-success">Full Time</span>
+                </div>
+                <h5 class="fw-bold">Senior Software Engineer</h5>
+                <p class="text-muted mb-2"><i class="bi bi-building me-2"></i>TechCorp Kenya</p>
+                <p class="text-muted mb-3"><i class="bi bi-geo-alt me-2"></i>Nairobi, Kenya</p>
+                <p class="mb-3">Looking for an experienced software engineer to join our growing team...</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="text-primary fw-bold">KSh 180K - 250K</span>
+                  <a href="job-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card job-card h-100 p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div class="bg-success bg-opacity-10 rounded p-3">
+                    <i class="bi bi-graph-up text-success fs-2"></i>
+                  </div>
+                  <span class="badge bg-warning text-dark">Part Time</span>
+                </div>
+                <h5 class="fw-bold">Marketing Manager</h5>
+                <p class="text-muted mb-2"><i class="bi bi-building me-2"></i>BrandWorks Ltd</p>
+                <p class="text-muted mb-3"><i class="bi bi-geo-alt me-2"></i>Mombasa, Kenya</p>
+                <p class="mb-3">Seeking a creative marketing professional to lead our brand campaigns...</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="text-primary fw-bold">KSh 120K - 180K</span>
+                  <a href="job-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card job-card h-100 p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div class="bg-warning bg-opacity-10 rounded p-3">
+                    <i class="bi bi-palette text-warning fs-2"></i>
+                  </div>
+                  <span class="badge bg-success">Full Time</span>
+                </div>
+                <h5 class="fw-bold">UI/UX Designer</h5>
+                <p class="text-muted mb-2"><i class="bi bi-building me-2"></i>DesignHub Africa</p>
+                <p class="text-muted mb-3"><i class="bi bi-geo-alt me-2"></i>Nairobi, Kenya</p>
+                <p class="mb-3">Join our creative team to design beautiful user experiences...</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="text-primary fw-bold">KSh 100K - 150K</span>
+                  <a href="job-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-5" data-aos="fade-up">
+            <a href="jobs.html" class="btn btn-primary btn-lg">View All Jobs</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Browse by Category -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold mb-3">Browse Jobs by Category</h2>
+            <p class="text-muted">Explore opportunities in your field</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="category-card">
+                <i class="bi bi-code-slash fs-1 mb-3"></i>
+                <h5 class="fw-bold">IT & Software</h5>
+                <p class="text-muted mb-0">320 Jobs</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+              <div class="category-card">
+                <i class="bi bi-megaphone fs-1 mb-3"></i>
+                <h5 class="fw-bold">Marketing</h5>
+                <p class="text-muted mb-0">185 Jobs</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="category-card">
+                <i class="bi bi-cart fs-1 mb-3"></i>
+                <h5 class="fw-bold">Sales</h5>
+                <p class="text-muted mb-0">240 Jobs</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <div class="category-card">
+                <i class="bi bi-heart-pulse fs-1 mb-3"></i>
+                <h5 class="fw-bold">Healthcare</h5>
+                <p class="text-muted mb-0">150 Jobs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="py-5">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold mb-3">How It Works</h2>
+            <p class="text-muted">Get hired in 3 easy steps</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="text-center">
+                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 100px; height: 100px;">
+                  <span class="display-4 text-primary fw-bold">1</span>
+                </div>
+                <h4 class="fw-bold mb-3">Create Account</h4>
+                <p class="text-muted">Sign up and build your professional profile in minutes</p>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="text-center">
+                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 100px; height: 100px;">
+                  <span class="display-4 text-primary fw-bold">2</span>
+                </div>
+                <h4 class="fw-bold mb-3">Search & Apply</h4>
+                <p class="text-muted">Browse thousands of jobs and apply with one click</p>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="text-center">
+                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 100px; height: 100px;">
+                  <span class="display-4 text-primary fw-bold">3</span>
+                </div>
+                <h4 class="fw-bold mb-3">Get Hired</h4>
+                <p class="text-muted">Connect with employers and land your dream job</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-5 bg-primary text-white">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-right">
+              <h2 class="fw-bold mb-3">Ready to Find Your Next Opportunity?</h2>
+              <p class="lead mb-0">Join thousands of job seekers and start your career journey today.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+              <a href="jobs.html" class="btn btn-light btn-lg">Get Started Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="fw-bold mb-4">Job Board Connect</h5>
+            <p class="text-white-50">Kenya's leading job platform connecting talented professionals with top employers.</p>
+            <div class="d-flex gap-3 mt-4">
+              <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4">For Candidates</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="jobs.html" class="text-white-50 text-decoration-none">Browse Jobs</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Create Account</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Career Advice</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Resume Tips</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4">For Employers</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="post-job.html" class="text-white-50 text-decoration-none">Post a Job</a></li>
+              <li class="mb-2"><a href="employers.html" class="text-white-50 text-decoration-none">Pricing</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Find Talent</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Resources</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4">Company</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+              <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4">Support</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Terms of Service</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 border-secondary">
+        <div class="text-center text-white-50">
+          <p class="mb-0">&copy; 2026 Job Board Connect. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px;">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendors/aos/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Back to top button
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('back-to-top');
+      if (window.scrollY > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    document.getElementById('back-to-top').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
